@@ -7,4 +7,18 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  namespace :api do
+    namespace :v1 do
+      # resources :forms
+      root "forms#index"
+      get "forms" => "forms#index"
+      post "forms" => "forms#create"
+      get "forms/:id" => "forms#show"
+      delete "forms/:id" => "forms#delete"
+      put "forms/:id" => "forms#update"
+
+      # resources :me
+      get "me" => "me#show"
+    end
+  end
 end

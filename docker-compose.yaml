@@ -1,0 +1,16 @@
+services:
+  app:
+    build:
+      context: .
+    environment:
+      - POSTGRES_HOST=${POSTGRES_HOST}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+      - RAILS_MASTER_KEY=${RAILS_MASTER_KEY}
+      - AWS_REGION=${AWS_REGION}
+      - AWS_COGNITO_POOL_ID=${AWS_COGNITO_POOL_ID}
+      - AWS_COGNITO_APP_CLIENT_ID=${AWS_COGNITO_APP_CLIENT_ID}
+      - PORT=3000
+    ports:
+      - 80:3000
